@@ -28,6 +28,9 @@ export const ChatBox = (prop) => {
     if (input.trim() !== "") {
       socket.emit("message", { message: input, roomId });
       setMessages((prevMsg) => [...prevMsg, { message: input, name: "You" }]);
+
+      // Reset input
+      setInput("");
     }
   };
 
